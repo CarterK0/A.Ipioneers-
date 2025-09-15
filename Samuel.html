@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Samuel: A Pioneer in AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .presentation-container {
+            width: 90%;
+            max-width: 960px;
+            background-color: #2d3748;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            text-align: center;
+            flex-grow: 1;
+            padding: 2rem;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f7fafc;
+        }
+
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #cbd5e0;
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .content-section {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .text-block {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .image-block {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button, .action-button {
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .nav-button:hover, .action-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-button.bg-indigo-600 {
+            background-color: #4c51bf;
+            color: #fff;
+        }
+
+        .nav-button.bg-indigo-600:hover {
+            background-color: #434190;
+        }
+
+        .action-button.bg-blue-500 {
+            background-color: #3b82f6;
+            color: #fff;
+        }
+
+        .action-button.bg-blue-500:hover {
+            background-color: #2563eb;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .pagination {
+            font-size: 1rem;
+            color: #a0aec0;
+        }
+
+        .back-button {
+            background-color: transparent;
+            border: none;
+            color: #a0aec0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .back-button:hover {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container">
+
+    <!-- Slide 1: Title -->
+    <div id="slide-1" class="slide active">
+        <h1 class="slide-title">Arthur Samuel</h1>
+        <p class="slide-subtitle">A Pioneer in Artificial Intelligence</p>
+        <div class="image-block">
+            <img class="slide-image w-80 h-auto" src="https://placehold.co/400x400/3182CE/FFFFFF?text=Arthur+Samuel+Portrait" alt="A portrait of Arthur Samuel, a pioneer in AI.">
+        </div>
+        <div class="button-container">
+            <button class="nav-button bg-indigo-600" onclick="nextSlide()">Start Presentation</button>
+        </div>
+    </div>
+
+    <!-- Slide 2: Early Life -->
+    <div id="slide-2" class="slide">
+        <h2 class="slide-title">Early Life and Career</h2>
+        <div class="content-section">
+            <div class="text-block">
+                <p class="text-lg leading-relaxed">
+                    Born in Emporia, Kansas, in 1901, Arthur Samuel's journey into the world of technology began with a passion for electrical engineering. He earned his Master's degree from MIT and went on to work at Bell Laboratories, where he contributed significantly to radar technology during World War II.
+                    <br><br>
+                    After the war, he joined IBM in 1949, a move that would set the stage for his groundbreaking work in computing. He was one of the first to apply his skills to non-numerical problems, a departure from the traditional use of computers for pure calculation.
+                </p>
+            </div>
+            <div class="image-block">
+                <img class="slide-image" src="https://placehold.co/400x300/3182CE/FFFFFF?text=IBM+701+Computer" alt="An image of the IBM 701 computer, one of the first commercial computers.">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="nav-button bg-indigo-600" onclick="prevSlide()">Previous</button>
+            <button class="nav-button bg-indigo-600" onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <!-- Slide 3: Major Contributions -->
+    <div id="slide-3" class="slide">
+        <h2 class="slide-title">Major Contributions: The Checkers Program</h2>
+        <div class="content-section">
+            <div class="text-block">
+                <p class="text-lg leading-relaxed">
+                    Arthur Samuel is best known for his checkers-playing program, which he began developing in the early 1950s. This program was a monumental achievement as it was one of the first self-learning systems ever created.
+                    <br><br>
+                    Rather than being explicitly programmed for every move, the program was designed to learn from its own experience. It played thousands of games against itself, refining its strategies and improving its performance over time. This work laid the groundwork for the field of machine learning.
+                </p>
+                <div class="button-container">
+                    <a href="https://www.youtube.com/watch?v=4h0QpNWrPbg" target="_blank" class="action-button bg-blue-500">Watch Video</a>
+                </div>
+            </div>
+            <div class="image-block">
+                <img class="slide-image" src="https://placehold.co/400x300/3182CE/FFFFFF?text=Checkerboard" alt="A checkerboard with pieces, representing Samuel's checkers program.">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="nav-button bg-indigo-600" onclick="prevSlide()">Previous</button>
+            <button class="nav-button bg-indigo-600" onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <!-- Slide 4: Contributions to AI -->
+    <div id="slide-4" class="slide">
+        <h2 class="slide-title">Pioneering AI Concepts</h2>
+        <div class="content-section">
+            <div class="text-block">
+                <p class="text-lg leading-relaxed">
+                    Samuel's program wasn't just a checkers player; it was a testing ground for core AI principles. He was a pioneer in several key areas:
+                    <br><br>
+                    - <b>Heuristic Search:</b> He developed a scoring function that allowed the program to evaluate the quality of a board position, even without playing out the entire game.
+                    - <b>Reinforcement Learning:</b> The program learned by receiving a "reward" for winning and a "penalty" for losing, adjusting its internal parameters to favor winning moves.
+                    - <b>Rote Learning:</b> The program could remember specific board positions and the best moves associated with them, a form of memory that improved its play.
+                </p>
+                <div class="button-container">
+                    <a href="https://webdocs.cs.ualberta.ca/~chinook/project/legacy.html" target="_blank" class="action-button bg-blue-500">Read More</a>
+                </div>
+            </div>
+            <div class="image-block">
+                <img class="slide-image" src="https://placehold.co/400x300/3182CE/FFFFFF?text=AI+Mind+Map" alt="An illustration of a mind map connecting different AI concepts.">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="nav-button bg-indigo-600" onclick="prevSlide()">Previous</button>
+            <button class="nav-button bg-indigo-600" onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <!-- Slide 5: Influence on Modern AI -->
+    <div id="slide-5" class="slide">
+        <h2 class="slide-title">Influence on Modern AI</h2>
+        <div class="content-section">
+            <div class="text-block">
+                <p class="text-lg leading-relaxed">
+                    Samuel's work laid the conceptual foundation for much of modern machine learning. His definition of machine learning as the "field of study that gives computers the ability to learn without being explicitly programmed" is still widely cited today.
+                    <br><br>
+                    His use of games as a testbed for AI is a practice that continues to this day, with AI systems mastering complex games like chess and Go. The techniques he pioneered, particularly reinforcement learning, are now central to autonomous systems, from self-driving cars to robotic automation.
+                </p>
+                <div class="button-container">
+                    <a href="https://en.wikipedia.org/wiki/Arthur_Samuel_(computer_scientist)" target="_blank" class="action-button bg-blue-500">Read His Bio</a>
+                </div>
+            </div>
+            <div class="image-block">
+                <img class="slide-image" src="https://placehold.co/400x300/3182CE/FFFFFF?text=Modern+AI+Logo" alt="A modern logo representing AI and machine learning.">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="nav-button bg-indigo-600" onclick="prevSlide()">Previous</button>
+            <button class="nav-button bg-indigo-600" onclick="nextSlide()">End</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+        });
+        if (slides[index]) {
+            slides[index].classList.add('active');
+            currentSlide = index;
+        }
+    }
+
+    function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+            showSlide(currentSlide + 1);
+        } else {
+            // Optional: loop back to the beginning
+            showSlide(0);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            showSlide(currentSlide - 1);
+        }
+    }
+
+    // Initial setup
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(0);
+    });
+</script>
+
+</body>
+</html>
