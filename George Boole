@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Father of the Digital Age: George Boole</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .slide {
+            display: none;
+            flex-grow: 1;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .slide-content img {
+            border-radius: 1rem;
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+        .nav-button.disabled {
+            background-color: #e5e7eb;
+            color: #9ca3af;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <!-- Slide 1: Title -->
+    <div id="slide1" class="slide active">
+        <div class="slide-content">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 leading-tight">
+                The Father of the Digital Age: George Boole
+            </h1>
+            <p class="text-center text-lg text-gray-600 mt-2">
+                An interactive look at the life and legacy of the man who laid the logical foundation for modern computing.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <img src="https://placehold.co/600x400/374151/FFFFFF?text=A+Portrait+of+George+Boole" alt="Portrait of George Boole" class="rounded-xl shadow-lg">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">
+                George Boole (1815-1864)
+            </p>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-button bg-gray-200 text-gray-800 disabled">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Previous
+            </button>
+            <button id="nextBtn" class="nav-button bg-blue-600 text-white">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide 2: Early Life and Career -->
+    <div id="slide2" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl font-bold text-gray-800">Early Life & The Laws of Thought</h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="md:w-1/2">
+                    <p class="text-gray-700">Born in Lincoln, England, George Boole's story is one of a self-taught genius. Despite a humble background and limited formal education, he demonstrated remarkable intellectual curiosity. By the age of 16, he was working as a teacher to support his family, all while independently studying Latin, Greek, and advanced mathematics.</p>
+                    <p class="text-gray-700 mt-4">His passion and talent led him to a professorship at Queen's College, Cork, even without a university degree. It was here that he produced his most famous work, <strong>"An Investigation of the Laws of Thought"</strong> (1854), which outlined the principles of what we now call Boolean algebra.</p>
+                    <a href="https://www.youtube.com/watch?v=AY1NDlKlPp4" target="_blank" class="nav-button bg-red-600 text-white mt-4 inline-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                            <path d="M10 8a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd" />
+                        </svg>
+                        Watch Boole's Story
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/94a3b8/FFFFFF?text=An+Investigation+of+the+Laws+of+Thought" alt="Book cover of The Laws of Thought" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn2" class="nav-button bg-gray-200 text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Previous
+            </button>
+            <button id="nextBtn2" class="nav-button bg-blue-600 text-white">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide 3: Major Contributions -->
+    <div id="slide3" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl font-bold text-gray-800">Boolean Algebra: The Foundation</h2>
+            <p class="text-gray-700">Boole's masterpiece introduced a new system of logic that uses algebraic symbols to represent logical propositions. Instead of numbers, his algebra dealt with two values: <strong>true (1)</strong> and <strong>false (0)</strong>. He established three core operations: <strong>AND</strong>, <strong>OR</strong>, and <strong>NOT</strong>.</p>
+            <div class="flex justify-center">
+                <img src="https://placehold.co/600x300/475569/FFFFFF?text=Boolean+Logic+Gates" alt="Diagram of logic gates" class="rounded-xl shadow-lg">
+            </div>
+            <p class="text-gray-700 mt-4">This elegant system could be used to solve complex logical problems and was a radical departure from traditional Aristotelian logic. While he never saw its full potential, Boole created the mathematical framework that would one day power every digital circuit and computer.</p>
+            <a href="https://www.codecademy.com/resources/blog/what-is-boolean-logic" target="_blank" class="nav-button bg-blue-600 text-white mt-4 inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2a10 10 0 100-20 10 10 0 000 20z" clip-rule="evenodd" />
+                </svg>
+                Learn More about Boolean Logic
+            </a>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn3" class="nav-button bg-gray-200 text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Previous
+            </button>
+            <button id="nextBtn3" class="nav-button bg-blue-600 text-white">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide 4: Contributions to AI and Computing -->
+    <div id="slide4" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl font-bold text-gray-800">The Connection to AI</h2>
+            <p class="text-gray-700">Almost a century after his death, George Boole's work became the bedrock of modern computing. In 1937, a young MIT graduate student named <strong>Claude Shannon</strong> wrote his master's thesis, "A Symbolic Analysis of Relay and Switching Circuits." Shannon demonstrated that Boolean logic could be used to design and simplify complex electrical circuits.</p>
+            <p class="text-gray-700 mt-4">This was the pivotal moment that connected Boole's abstract mathematics to the physical world of electronics. The "true" and "false" of Boolean logic became the "on" and "off" of switches and transistors, forming the binary code (1s and 0s) that is the universal language of computers.</p>
+            <div class="flex justify-center">
+                <img src="https://placehold.co/600x300/a3e635/FFFFFF?text=Claude+Shannon+and+his+Thesis" alt="Claude Shannon with his thesis" class="rounded-xl shadow-lg">
+            </div>
+            <a href="https://www.historyofinformation.com/detail.php?id=622" target="_blank" class="nav-button bg-green-600 text-white mt-4 inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm1 5.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v3.5a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-3.5zm7 0a.5.5 0 01.5-.5h2a.5.5 0 01.5.5v3.5a.5.5 0 01-.5.5h-2a.5.5 0 01-.5-.5v-3.5z" clip-rule="evenodd" />
+                </svg>
+                Read Shannon's Thesis Summary
+            </a>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn4" class="nav-button bg-gray-200 text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Previous
+            </button>
+            <button id="nextBtn4" class="nav-button bg-blue-600 text-white">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Slide 5: Modern Influence -->
+    <div id="slide5" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl font-bold text-gray-800">Boole's Enduring Legacy</h2>
+            <p class="text-gray-700">Boole's work is not just a historical footnote; it is the fundamental "language" of computing. Every smartphone, computer, and network router relies on logic gates that perform Boolean operations. This foundation extends directly into the world of Artificial Intelligence, where complex algorithms and neural networks are built upon millions of simple binary decisions.</p>
+            <div class="flex justify-center">
+                <img src="https://placehold.co/600x300/4f46e5/FFFFFF?text=Modern+Circuit+Board" alt="Close-up of a modern circuit board" class="rounded-xl shadow-lg">
+            </div>
+            <p class="text-gray-700 mt-4">In a fascinating twist of history, Boole's great-great-grandson, renowned computer scientist <strong>Geoffrey Hinton</strong>, became one of the "godfathers of AI" through his pioneering work on deep learning. Hinton's work, which has revolutionized the field, is a direct continuation of the logical tradition started by his ancestor, George Boole.</p>
+            <a href="https://georgeboole.com/boole/life/ucc/lawsofthought/" target="_blank" class="nav-button bg-purple-600 text-white mt-4 inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v6a1 1 0 001 1h8a1 1 0 001-1V7a1 1 0 00-1-1H6z" clip-rule="evenodd" />
+                </svg>
+                Read More about Boole's Masterpiece
+            </a>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prevBtn5" class="nav-button bg-gray-200 text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Previous
+            </button>
+            <button id="nextBtn5" class="nav-button bg-blue-600 text-white disabled">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            updateNavButtons();
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById(`prevBtn${currentSlide + 1}`);
+            const nextBtn = document.getElementById(`nextBtn${currentSlide + 1}`);
+            const allPrevBtns = document.querySelectorAll('[id^="prevBtn"]');
+            const allNextBtns = document.querySelectorAll('[id^="nextBtn"]');
+
+            // Disable all buttons first
+            allPrevBtns.forEach(btn => btn.classList.add('disabled'));
+            allNextBtns.forEach(btn => btn.classList.add('disabled'));
+
+            // Enable buttons for the current slide
+            if (prevBtn) {
+                prevBtn.classList.remove('disabled');
+            }
+            if (nextBtn) {
+                nextBtn.classList.remove('disabled');
+            }
+
+            // Global logic for first and last slides
+            if (currentSlide === 0) {
+                document.getElementById('prevBtn').classList.add('disabled');
+            } else {
+                document.getElementById('prevBtn').classList.remove('disabled');
+            }
+
+            if (currentSlide === slides.length - 1) {
+                document.getElementById('nextBtn5').classList.add('disabled');
+            } else {
+                document.getElementById('nextBtn5').classList.remove('disabled');
+            }
+        }
+        
+        document.querySelectorAll('[id^="prevBtn"]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+        });
+
+        document.querySelectorAll('[id^="nextBtn"]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+        });
+
+        // Initial setup
+        showSlide(currentSlide);
+    });
+</script>
+
+</body>
+</html>
