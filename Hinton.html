@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey Hinton: The Godfather of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .presentation-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 4xl;
+            padding: 2.5rem;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .button {
+            padding: 0.75rem 1.5rem;
+            background-color: #1e3a8a;
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .button:hover:not(:disabled) {
+            background-color: #1c45a8;
+            transform: translateY(-2px);
+        }
+        .button:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .slide-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            text-align: center;
+        }
+        .slide-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .slide-content p {
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+        .slide-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 1rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: block;
+        }
+        .resources-button {
+            display: inline-block;
+            margin-right: 0.75rem;
+            padding: 0.5rem 1rem;
+            background-color: #4a5568;
+            color: #ffffff;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .resources-button:hover {
+            background-color: #2d3748;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        <div class="slide-content">
+            <!-- Slide 1: Introduction -->
+            <div id="slide1" class="slide active">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl">Geoffrey Hinton: The Godfather of AI</h1>
+                <div class="text-center">
+                    <img src="https://placehold.co/500x350/a1a1aa/ffffff?text=Portrait+of+Geoffrey+Hinton" alt="A portrait of Geoffrey Hinton" class="slide-image">
+                    <p class="text-lg">Geoffrey Hinton is a British-Canadian computer scientist and cognitive psychologist widely recognized as one of the "Godfathers of Deep Learning." His foundational work on neural networks has earned him numerous accolades, including the prestigious Turing Award, and has revolutionized the field of artificial intelligence.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: Early Life & Career -->
+            <div id="slide2" class="slide">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl">Early Life & Influences</h1>
+                <div class="text-center">
+                    <p class="text-lg">Born in Wimbledon, England, in 1947, Geoffrey Hinton's early academic journey was diverse, leading him to study experimental psychology at the University of Cambridge. He received his Ph.D. in Artificial Intelligence from the University of Edinburgh in 1978. Throughout his career, he has held academic positions at institutions such as Carnegie-Mellon University and the University of Toronto, where much of his seminal work was conducted. He was a key figure in the Canadian Institute for Advanced Research (CIFAR) and his startup DNNresearch was acquired by Google in 2013.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Backpropagation Algorithm -->
+            <div id="slide3" class="slide">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl">Key Contribution: Backpropagation</h1>
+                <div class="text-center">
+                    <img src="https://placehold.co/500x350/a1a1aa/ffffff?text=Illustration+of+Backpropagation" alt="An illustration of the backpropagation algorithm" class="slide-image">
+                    <p class="text-lg">One of Hinton's most significant contributions was his work on the backpropagation algorithm. While the concept had existed previously, Hinton and his colleagues demonstrated that it could be used to effectively train multi-layered neural networks. This algorithm allows a network to "learn" by calculating the error at the output layer and propagating it backward to adjust the weights of the hidden layers, thereby improving accuracy over time. This breakthrough laid the groundwork for the deep learning revolution.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" class="resources-button">Watch an Intro to Backpropagation</a>
+                        <a href="https://www.ibm.com/think/topics/backpropagation" target="_blank" class="resources-button">Learn More at IBM</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Influence on Modern AI -->
+            <div id="slide4" class="slide">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl">Influence on Modern AI</h1>
+                <div class="text-center">
+                    <img src="https://placehold.co/500x350/a1a1aa/ffffff?text=Illustration+of+Modern+AI" alt="An illustration of modern AI applications like a self-driving car" class="slide-image">
+                    <p class="text-lg">Hinton's work, along with that of his collaborators, led to the development of deep neural networks that have had a profound impact on technology today. From speech recognition and image classification to natural language processing (NLP) and self-driving cars, deep learning is at the core of many of the AI applications we use daily. Hinton's work enabled computers to recognize complex patterns and make intelligent decisions from vast amounts of data.</p>
+                    <div class="mt-4">
+                        <a href="https://www.classcentral.com/course/youtube-fathers-of-the-deep-learning-revolution-receive-acm-a-m-turing-award-138233" target="_blank" class="resources-button">Watch the Turing Award Lecture</a>
+                        <a href="https://builtin.com/artificial-intelligence/examples-ai-in-industry" target="_blank" class="resources-button">See AI Examples in Industry</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Slide 5: Recent Concerns and Legacy -->
+            <div id="slide5" class="slide">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl">Recent Concerns & Legacy</h1>
+                <div class="text-center">
+                    <p class="text-lg">In recent years, Hinton has voiced concerns about the rapid advancement and potential dangers of the AI technology he helped create. He left his position at Google to speak more freely about the risks of AI, including misinformation, job displacement, and the possibility of existential threats. His actions highlight the ethical considerations that must accompany technological progress, and his legacy continues to inspire both innovation and a critical examination of AI's societal impact.</p>
+                    <div class="mt-4">
+                        <a href="https://www.youtube.com/watch?v=NnA2OoH_NFY" target="_blank" class="resources-button">Watch an Interview on AI Risk</a>
+                        <a href="https://mitsloan.mit.edu/ideas-made-to-matter/why-neural-net-pioneer-geoffrey-hinton-sounding-alarm-ai" target="_blank" class="resources-button">Read About His AI Concerns</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" class="button">Previous</button>
+            <div id="slideIndicator" class="text-center text-sm font-semibold text-gray-500">Slide 1 of 5</div>
+            <button id="nextBtn" class="button">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideIndicator = document.getElementById('slideIndicator');
+        let currentSlideIndex = 0;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            updateButtons();
+            updateIndicator();
+        }
+
+        // Function to update button state (disabled or not)
+        function updateButtons() {
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === slides.length - 1;
+        }
+
+        // Function to update the slide indicator text
+        function updateIndicator() {
+            slideIndicator.textContent = `Slide ${currentSlideIndex + 1} of ${slides.length}`;
+        }
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener('click', () => {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        // Show the first slide and update buttons on load
+        window.onload = function() {
+            showSlide(currentSlideIndex);
+        };
+
+    </script>
+</body>
+</html>
+
+This interactive presentation is a single HTML file that includes all the necessary HTML, CSS (using Tailwind), and JavaScript. It features five distinct slides that you can navigate using the "Next" and "Previous" buttons. The content covers Geoffrey Hinton's early life, his major contribution to the backpropagation algorithm, and his lasting influence on modern AI, including his recent public statements about AI's potential risks. I've also included clickable buttons that link to additional resources for each section.
+
+If you would like to expand on any of the sections or add more slides, just let me know!
+http://googleusercontent.com/youtube_content/0
