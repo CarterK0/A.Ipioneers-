@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen Newell: An AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <!-- Header -->
+        <header class="p-6 md:p-8 bg-purple-600 text-white text-center rounded-t-2xl">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Allen Newell: A Pioneer of AI</h1>
+            <p class="mt-2 text-purple-200 text-sm md:text-base">Understanding the origins of human and machine intelligence</p>
+        </header>
+
+        <!-- Slides Container -->
+        <main class="p-6 md:p-8">
+
+            <!-- Slide 1: Early Life -->
+            <div id="slide-1" class="slide active">
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0">
+                        <img src="https://placehold.co/200x200/5b21b6/ffffff?text=Allen+Newell" alt="Portrait of Allen Newell" class="rounded-full shadow-lg border-4 border-purple-300">
+                    </div>
+                    <div class="text-gray-700">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-purple-700">Early Life & Education</h2>
+                        <p class="mb-2">Allen Newell (1927–1992) was born in San Francisco, California. His early interest in science was sparked during his service in the U.S. Navy. After earning a B.S. in physics from Stanford University, he spent a year at Princeton before joining the RAND Corporation in 1950.</p>
+                        <p class="mb-4">It was at RAND where he met Nobel laureate Herbert A. Simon, a partnership that would become foundational to the field of AI. He later earned his Ph.D. in industrial administration from Carnegie Mellon University in 1957, with Simon as his advisor.</p>
+                        <a href="https://amturing.acm.org/award_winners/newell_3167755.cfm" target="_blank" class="inline-block mt-4 text-sm text-purple-500 hover:text-purple-700 transition duration-300">
+                            Learn more about Allen Newell's life and work <span class="font-bold">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Major Contributions -->
+            <div id="slide-2" class="slide">
+                <div class="text-gray-700">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-purple-700">Major Contributions to AI</h2>
+                    <p class="mb-4">Newell's work, often in collaboration with Herbert Simon and J.C. Shaw, focused on creating programs that could model human problem-solving and thinking processes. His work laid the foundation for the symbolic approach to AI.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-purple-50 rounded-lg shadow-inner">
+                            <h3 class="text-xl font-bold text-purple-600 mb-2">The Logic Theorist (1956)</h3>
+                            <p class="text-sm">Widely considered the first AI program, it was designed to prove theorems in symbolic logic. It was a landmark achievement that demonstrated a computer's ability to reason.</p>
+                            <img src="https://placehold.co/300x150/d1c4e9/5b21b6?text=Logic+Theorist+Illustration" alt="Illustration of the Logic Theorist program flow" class="w-full mt-4 rounded-md">
+                            <a href="https://www.historyofinformation.com/detail.php?id=742" target="_blank" class="inline-block mt-2 text-xs text-purple-500 hover:text-purple-700 transition duration-300">
+                                Explore a detailed history of the Logic Theorist <span class="font-bold">&rarr;</span>
+                            </a>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-lg shadow-inner">
+                            <h3 class="text-xl font-bold text-purple-600 mb-2">General Problem Solver (GPS)</h3>
+                            <p class="text-sm">The GPS was a more ambitious program designed to solve a wider range of problems by using a "means-ends analysis" to break down complex goals into smaller sub-goals. This concept is fundamental to modern problem-solving algorithms.</p>
+                            <img src="https://placehold.co/300x150/d1c4e9/5b21b6?text=General+Problem+Solver+Flowchart" alt="Flowchart of the General Problem Solver" class="w-full mt-4 rounded-md">
+                            <a href="https://www.britannica.com/biography/Allen-Newell" target="_blank" class="inline-block mt-2 text-xs text-purple-500 hover:text-purple-700 transition duration-300">
+                                Read more about GPS and Newell's work <span class="font-bold">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Influence on Modern AI -->
+            <div id="slide-3" class="slide">
+                <div class="text-gray-700">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-purple-700">Influence on Modern AI</h2>
+                    <p class="mb-4">Newell's work established a foundation for the symbolic approach to AI, which remains a core part of the field. His research also helped to create the interdisciplinary field of cognitive science, bridging computer science and psychology.</p>
+                    <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                        <li>
+                            <span class="font-bold">Heuristic Search:</span> The "rules of thumb" used in his early programs are now fundamental to many modern AI algorithms, from computer chess to complex logistics and pathfinding.
+                        </li>
+                        <li>
+                            <span class="font-bold">Cognitive Architectures:</span> His work on the **Soar** architecture aimed to create a unified theory of cognition. This idea of a comprehensive, human-like AI system is a goal still pursued by many researchers today.
+                        </li>
+                        <li>
+                            <span class="font-bold">Human-Computer Interaction:</span> His research with Xerox PARC on how humans and computers interact was a key step in developing graphical user interfaces and other user-friendly systems.
+                        </li>
+                    </ul>
+                    <a href="https://www.profound-deming.com/blog-1/ode-to-a-great-operations-researcher-and-ai-pioneer-celebrating-allen-newell" target="_blank" class="inline-block mt-4 text-sm text-purple-500 hover:text-purple-700 transition duration-300">
+                        Read a tribute to his lasting legacy <span class="font-bold">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Navigation Buttons -->
+        <footer class="p-6 md:p-8 flex justify-between">
+            <button id="prev-btn" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-300 transition-colors duration-300">
+                &larr; Previous
+            </button>
+            <button id="next-btn" class="bg-purple-600 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-purple-700 transition-colors duration-300">
+                Next &rarr;
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentSlideIndex = 0;
+
+            const showSlide = (index) => {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                showSlide(currentSlideIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                showSlide(currentSlideIndex);
+            });
+
+            // Initial slide display
+            showSlide(currentSlideIndex);
+        });
+    </script>
+</body>
+</html>
