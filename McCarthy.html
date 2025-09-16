@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Father of AI: John McCarthy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            padding: 3rem;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .slide h1, .slide h2 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .slide h1 {
+            font-size: 2.5rem;
+            color: #1f2937;
+        }
+        .slide h2 {
+            font-size: 1.5rem;
+            color: #374151;
+        }
+        .slide p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+        .slide-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            object-fit: cover;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 3rem;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+        .nav-buttons button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        #prevBtn {
+            background-color: #d1d5db;
+            color: #374151;
+        }
+        #prevBtn:hover {
+            background-color: #9ca3af;
+        }
+        #nextBtn {
+            background-color: #1d4ed8;
+            color: white;
+        }
+        #nextBtn:hover {
+            background-color: #2563eb;
+        }
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+            background-color: #6366f1;
+            color: white;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .link-button:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .slide-container {
+                min-height: 70vh;
+                padding: 1rem;
+            }
+            .slide {
+                padding: 2rem 1.5rem;
+            }
+            .slide h1 {
+                font-size: 2rem;
+            }
+            .slide h2 {
+                font-size: 1.25rem;
+            }
+            .slide p {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Slide 1: Introduction -->
+        <div id="slide1" class="slide active">
+            <h1 class="text-center">John McCarthy: The Father of AI</h1>
+            <p class="text-center mt-4">
+                This presentation explores the life and monumental contributions of John McCarthy, the American computer scientist who coined the term "Artificial Intelligence" and laid the groundwork for the field we know today.
+            </p>
+            <img src="https://placehold.co/400x300/e0e7ff/374151?text=John+McCarthy+Portrait" alt="A portrait of John McCarthy" class="slide-image mx-auto">
+        </div>
+
+        <!-- Slide 2: Early Life and Education -->
+        <div id="slide2" class="slide">
+            <h2 class="text-left">Early Life and Academic Journey</h2>
+            <p>
+                Born in Boston, Massachusetts, in 1927, John McCarthy was a mathematical prodigy from an early age. His intellectual journey led him to Caltech, where he earned his undergraduate degree in mathematics. He went on to earn his Ph.D. from Princeton University in 1951. His early work focused on mathematical logic, a foundation that would prove crucial for his later ventures into computing and intelligence.
+            </p>
+            <img src="https://placehold.co/400x300/d1d5db/374151?text=Vintage+Computer" alt="An image of a large, vintage computer from the mid-20th century." class="slide-image mx-auto">
+            <a href="https://www.youtube.com/watch?v=Ozipf13jRr4" target="_blank" class="link-button">Watch an interview with McCarthy</a>
+        </div>
+        
+        <!-- Slide 3: Coining "Artificial Intelligence" -->
+        <div id="slide3" class="slide">
+            <h2 class="text-left">The Dartmouth Workshop</h2>
+            <p>
+                In 1955, John McCarthy, along with Marvin Minsky, Nathaniel Rochester, and Claude Shannon, proposed the now-famous "Dartmouth Summer Research Project on Artificial Intelligence." This landmark workshop in the summer of 1956 is widely considered the birthplace of the field of AI. It was here that McCarthy first coined the term "Artificial Intelligence" to define the new area of study. The workshop's proposal outlined the goal to "proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it."
+            </p>
+             <a href="https://www.youtube.com/watch?v=QuNa_h30EDA" target="_blank" class="link-button">See a short video on the Dartmouth Conference</a>
+        </div>
+
+        <!-- Slide 4: Major Technical Contributions -->
+        <div id="slide4" class="slide">
+            <h2 class="text-left">LISP and Time-Sharing</h2>
+            <p>
+                McCarthy's contributions were not limited to a single term. He developed the LISP (LISt Processing) programming language in 1958, which quickly became the dominant language for AI research for decades. LISP's focus on symbolic computation was a radical departure from the number-crunching of its time. He also pioneered the concept of "time-sharing" in computing, a foundational idea that allowed multiple users to share a single mainframe computer simultaneously. This concept was a direct precursor to modern cloud computing and interactive computing.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center mt-6">
+                <img src="https://placehold.co/250x150/fca5a5/44403c?text=LISP+Logo" alt="A logo representing the LISP programming language." class="slide-image m-4">
+                <img src="https://placehold.co/250x150/d1d5db/374151?text=Time+Sharing+Diagram" alt="A conceptual diagram of multiple users connected to a single time-shared computer." class="slide-image m-4">
+            </div>
+            <a href="https://www-formal.stanford.edu/jmc/history/timesharing/timesharing.html" target="_blank" class="link-button">Read McCarthy's article on time-sharing</a>
+        </div>
+        
+        <!-- Slide 5: Lasting Influence -->
+        <div id="slide5" class="slide">
+            <h2 class="text-left">Legacy and Modern AI</h2>
+            <p>
+                John McCarthy's vision and work continue to be felt in every corner of computer science. The field of AI, from machine learning to natural language processing, is a direct descendant of the research agenda he set forth. The concept of time-sharing evolved into today's cloud computing infrastructure, where we seamlessly access and share vast computing resources without needing to own the hardware. His relentless pursuit of the question "Can a machine think?" sparked a revolution that continues to shape our world.
+            </p>
+            <img src="https://placehold.co/400x300/c7d2fe/4338ca?text=Modern+AI+Illustration" alt="A futuristic illustration showing connections between human brains and digital networks, representing modern AI's influence." class="slide-image mx-auto">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button id="prevBtn" class="disabled">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                        slide.style.display = 'flex';
+                    } else {
+                        slide.classList.remove('active');
+                        slide.style.display = 'none';
+                    }
+                });
+                updateButtons(index);
+            }
+
+            function updateButtons(index) {
+                prevBtn.classList.toggle('disabled', index === 0);
+                nextBtn.classList.toggle('disabled', index === slides.length - 1);
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Initial display
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
