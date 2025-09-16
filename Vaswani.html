@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Presentation: Ashish Vaswani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            transition: background-color 0.5s ease;
+        }
+        .slide {
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .slide-content {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 4rem 2rem;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-content h1 {
+            color: #1f2937;
+        }
+        .slide-content p {
+            color: #4b5563;
+        }
+        .slide-content h2 {
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            @apply px-6 py-3 rounded-full font-semibold shadow-lg transition-transform transform hover:scale-105;
+        }
+        .btn-prev {
+            @apply bg-gray-200 text-gray-800;
+        }
+        .btn-next {
+            @apply bg-blue-600 text-white;
+        }
+        .link-btn {
+            @apply inline-flex items-center justify-center px-4 py-2 rounded-full font-semibold text-white transition-colors duration-300 shadow-md;
+            background-color: #10b981;
+        }
+        .link-btn:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Slides Container -->
+    <div id="slides-container" class="flex items-center justify-center min-h-screen">
+
+        <!-- Slide 1: Title Slide -->
+        <div id="slide-1" class="slide active">
+            <div class="slide-content">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">The Architect of Attention</h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium">A look into the work of Ashish Vaswani and the Transformer model</p>
+                <img src="https://placehold.co/400x250/374151/f3f4f6?text=Ashish+Vaswani" alt="Placeholder image for Ashish Vaswani" class="mt-8 rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+        </div>
+
+        <!-- Slide 2: Early Life and Education -->
+        <div id="slide-2" class="slide">
+            <div class="slide-content">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Early Life and Education</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://placehold.co/300x200/9ca3af/ffffff?text=University+of+Southern+California" alt="Placeholder image for University of Southern California" class="rounded-lg shadow-lg w-full md:w-1/2 h-auto max-w-md">
+                    <div class="text-left w-full md:w-1/2">
+                        <p class="text-lg mb-4 leading-relaxed">Ashish Vaswani grew up in Oman before moving to Nagpur, India. He earned his computer science degree from the Birla Institute of Technology, Mesra. He later pursued his Master's and PhD at the University of Southern California (USC), where his fascination with deep learning began to shape his future research.</p>
+                        <p class="text-lg leading-relaxed">He was one of the first students to see the potential for deep learning in natural language processing, a field he would later revolutionize.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Major Contributions: The Transformer -->
+        <div id="slide-3" class="slide">
+            <div class="slide-content">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Major Contributions: The Transformer</h2>
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <img src="https://placehold.co/300x200/4b5563/ffffff?text=Transformer+Diagram" alt="Placeholder image of a Transformer model diagram" class="rounded-lg shadow-lg w-full md:w-1/2 h-auto max-w-md">
+                    <div class="text-left w-full md:w-1/2">
+                        <p class="text-lg mb-4 leading-relaxed">In 2017, while at Google, Ashish Vaswani co-authored the seminal paper, "Attention Is All You Need." This paper introduced a novel architecture called the Transformer, which completely changed the landscape of AI.</p>
+                        <p class="text-lg mb-4 leading-relaxed">Unlike previous models that relied on recurrent or convolutional neural networks, the Transformer uses a mechanism called "self-attention" to process sequences in parallel. This made models much faster to train and more effective at capturing long-range dependencies.</p>
+                        <div class="flex flex-wrap gap-4 mt-6 justify-start">
+                            <a href="https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf" target="_blank" class="link-btn">
+                                <i class="fas fa-file-alt mr-2"></i> Read the Paper
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=wjZofJX0v4M&vl=en" target="_blank" class="link-btn">
+                                <i class="fab fa-youtube mr-2"></i> Watch a Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Influence on Modern AI -->
+        <div id="slide-4" class="slide">
+            <div class="slide-content">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Influence on Modern AI</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://placehold.co/300x200/6b7280/ffffff?text=AI+Revolution" alt="Placeholder image for AI revolution" class="rounded-lg shadow-lg w-full md:w-1/2 h-auto max-w-md">
+                    <div class="text-left w-full md:w-1/2">
+                        <p class="text-lg mb-4 leading-relaxed">The Transformer architecture has become the foundation for nearly all modern large language models (LLMs) and other advanced AI systems, including Google's BERT and the GPT series. Its ability to process information efficiently has made the current AI boom possible.</p>
+                        <p class="text-lg leading-relaxed">Ashish Vaswani's work is considered a pivotal moment in the history of AI, marking a significant shift from sequential to parallel processing and enabling the rapid progress we see today.  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="controls">
+        <button id="prevBtn" class="btn btn-prev">
+            <i class="fas fa-arrow-left mr-2"></i> Previous
+        </button>
+        <button id="nextBtn" class="btn btn-next">
+            Next <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript for Slideshow Logic -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Handle button states
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+            prevBtn.style.opacity = prevBtn.disabled ? 0.5 : 1;
+            nextBtn.style.opacity = nextBtn.disabled ? 0.5 : 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initialize presentation
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
