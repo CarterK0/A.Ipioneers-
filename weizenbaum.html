@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ELIZA Program: A Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slide {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .slide-hidden {
+            display: none;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div id="presentation-container" class="w-full max-w-4xl bg-slate-800 p-8 rounded-2xl shadow-2xl space-y-8">
+        <!-- Slides -->
+        <div id="slide1" class="slide">
+            <h1 class="text-4xl sm:text-5xl font-bold text-center text-indigo-400 mb-6">The Dawn of AI: Joseph Weizenbaum's ELIZA</h1>
+            <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Vintage+Computer+with+ELIZA" alt="Vintage computer screen showing a text conversation with the ELIZA program" class="w-full h-auto rounded-lg shadow-xl mb-6 object-cover">
+            <p class="text-lg text-center sm:text-xl leading-relaxed">
+                Created by computer scientist Joseph Weizenbaum at MIT in 1966, ELIZA was one of the first programs to convincingly simulate human conversation. Its most famous script, DOCTOR, mimicked a Rogerian psychotherapist by rephrasing a user's statements into questions.
+            </p>
+        </div>
+
+        <div id="slide2" class="slide slide-hidden">
+            <h1 class="text-4xl sm:text-5xl font-bold text-center text-indigo-400 mb-6">The ELIZA Effect: More Than a Program</h1>
+            <p class="text-lg text-center sm:text-xl leading-relaxed mb-6">
+                Weizenbaum was shocked to find that users, including his own secretary, began to attribute human-like intelligence, feelings, and empathy to the program, even while knowing it was a simple script. This phenomenon became known as the "ELIZA Effect."
+            </p>
+            <div class="flex justify-center">
+                <a href="https://www.youtube.com/watch?v=RMK9AphfLco" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105">
+                    Watch a video demonstration of ELIZA
+                </a>
+            </div>
+        </div>
+
+        <div id="slide3" class="slide slide-hidden">
+            <h1 class="text-4xl sm:text-5xl font-bold text-center text-indigo-400 mb-6">The Moral Compass: Weizenbaum's Concerns</h1>
+            <p class="text-lg text-center sm:text-xl leading-relaxed mb-6">
+                Weizenbaum became a vocal critic of artificial intelligence. He was deeply disturbed by the "powerful delusional thinking" ELIZA could induce and warned against the dehumanization of human interaction. He argued that computers should never be used in roles that require genuine human understanding and empathy.
+            </p>
+            <div class="flex justify-center">
+                <a href="https://www.cprime.com/resources/blog/lessons-and-warnings-from-the-original-chatbot-eliza/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105">
+                    Read about Weizenbaum's Legacy
+                </a>
+            </div>
+        </div>
+
+        <div id="slide4" class="slide slide-hidden">
+            <h1 class="text-4xl sm:text-5xl font-bold text-center text-indigo-400 mb-6">Legacy: A Foundation for Modern AI Ethics</h1>
+            <p class="text-lg text-center sm:text-xl leading-relaxed mb-6">
+                ELIZA's simple design laid the foundation for modern chatbots and natural language processing. More importantly, Weizenbaum's ethical concerns sparked a critical debate that continues to this day, influencing discussions about AI safety, accountability, and the responsible use of technology in society.
+            </p>
+            <div class="flex justify-center">
+                <a href="https://www.csee.umbc.edu/courses/331/papers/eliza.html" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105">
+                    Explore the inner workings of ELIZA
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-8">
+            <button id="prevBtn" class="bg-slate-700 text-slate-300 py-2 px-6 rounded-lg shadow-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Previous
+            </button>
+            <button id="nextBtn" class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                Next &rarr;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('slide-hidden');
+                    } else {
+                        slide.classList.add('slide-hidden');
+                    }
+                });
+
+                // Update button states
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Initial display
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
