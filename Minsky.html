@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin Minsky: The Architect of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f4f8;
+            color: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 1rem;
+        }
+        .presentation-container {
+            position: relative;
+            background: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 960px;
+            height: 100%;
+            max-height: 720px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            position: relative;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        .slide h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+        }
+        .slide p {
+            font-size: 1.125rem;
+            max-width: 800px;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+        .slide img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-button {
+            background-color: #6366f1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            background-color: #4f46e5;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        .resource-button {
+            background-color: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .resource-button:hover {
+            background-color: #059669;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .footer-nav span {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .intro-slide {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container">
+    <div id="slide1" class="slide active">
+        <div class="slide-content">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Marvin Minsky: The Architect of AI</h1>
+            <p class="intro-slide text-lg sm:text-xl">
+                Explore the life and work of Marvin Minsky, a co-founder of the MIT Artificial Intelligence Laboratory and a pivotal figure in the history of AI. From his early days at Princeton to his groundbreaking theories, this presentation covers his enduring impact.
+            </p>
+        </div>
+    </div>
+
+    <div id="slide2" class="slide">
+        <div class="slide-content">
+            <h1 class="text-3xl sm:text-4xl">Early Life & Education</h1>
+            <img src="https://placehold.co/400x400/1e293b/cbd5e1?text=Marvin+Minsky" alt="A photo of Marvin Minsky" class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
+            <p>
+                Born in New York City in 1927, Marvin Minsky's fascination with the mind and machines began early. He served in the U.S. Navy and later earned degrees from Harvard and Princeton, where he built the first-ever neural network simulator in 1951, a foundational step in the field of AI.
+            </p>
+            <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=2jgji5LMDzQ" target="_blank" class="resource-button">
+                    Watch an Interview with Minsky
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide3" class="slide">
+        <div class="slide-content">
+            <h1 class="text-3xl sm:text-4xl">Foundational Contributions to AI</h1>
+            <img src="https://placehold.co/400x300/1e293b/cbd5e1?text=Society+of+Mind" alt="A diagram representing Minsky's Society of Mind theory" class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
+            <p>
+                Minsky is best known for his pivotal 1969 book, "Perceptrons," which influenced a shift away from neural networks for over a decade. He also introduced the "Society of Mind" theory, which posits that the mind is composed of many smaller, simpler, interacting "agents" that collectively produce complex thought and consciousness. This decentralized view of intelligence was highly influential.
+            </p>
+            <div class="button-group">
+                <a href="https://jaress.medium.com/the-turing-option-and-minskys-society-of-mind-theory-explained-4b25807b0733" target="_blank" class="resource-button">
+                    Read More about Society of Mind
+                </a>
+                <a href="https://www.youtube.com/watch?v=DrmnH0xkzQ8" target="_blank" class="resource-button">
+                    Watch Minsky explain his theories
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide4" class="slide">
+        <div class="slide-content">
+            <h1 class="text-3xl sm:text-4xl">A Lasting Legacy</h1>
+            <img src="https://placehold.co/400x300/1e293b/cbd5e1?text=Modern+AI" alt="A depiction of modern neural networks" class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
+            <p>
+                Although some of his theories were met with criticism, Minsky's work is considered foundational to modern AI. His ideas on knowledge representation, the architecture of intelligence, and his co-founding of the MIT AI Lab cemented his legacy as a visionary. His work, including "Perceptrons," ultimately helped to refine and strengthen the field of neural networks that now power much of modern AI.
+            </p>
+            <div class="button-group">
+                <a href="https://www.popsci.com/legacy-marvin-minsky-who-help-found-artificial-intelligence/" target="_blank" class="resource-button">
+                    Read about His Enduring Influence
+                </a>
+                <a href="https://www.youtube.com/watch?v=EI0NXTrS5Pw" target="_blank" class="resource-button">
+                    Video: Minsky's Legacy
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+        <button id="prevBtn" class="nav-button">Previous</button>
+        <span id="slide-number">Slide 1 of 4</span>
+        <button id="nextBtn" class="nav-button">Next</button>
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideNumberSpan = document.getElementById('slide-number');
+    let currentSlideIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+        updateButtons();
+        updateSlideNumber();
+    }
+
+    function updateButtons() {
+        prevBtn.style.visibility = currentSlideIndex === 0 ? 'hidden' : 'visible';
+        nextBtn.style.visibility = currentSlideIndex === slides.length - 1 ? 'hidden' : 'visible';
+    }
+
+    function updateSlideNumber() {
+        slideNumberSpan.textContent = `Slide ${currentSlideIndex + 1} of ${slides.length}`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSlideIndex > 0) {
+            currentSlideIndex--;
+            showSlide(currentSlideIndex);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentSlideIndex < slides.length - 1) {
+            currentSlideIndex++;
+            showSlide(currentSlideIndex);
+        }
+    });
+
+    // Initial load
+    showSlide(currentSlideIndex);
+</script>
+
+</body>
+</html>
