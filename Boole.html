@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Boole: Pioneer of Logic and AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .slide {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .button {
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .nav-buttons {
+            position: absolute;
+            bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .content-with-media {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .image-container, .video-container {
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .media-and-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .link-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .link-button {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="container">
+        
+        <!-- Slide 1: Title Slide -->
+        <div id="slide-1" class="slide active">
+            <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">George Boole: A Pioneer of Logic and AI</h1>
+            <p class="text-xl text-center text-gray-600 mb-8">The Father of Modern Computing</p>
+            <div class="image-container">
+                <img src="https://placehold.co/800x450/e2e8f0/64748b?text=Portrait+of+George+Boole" alt="Portrait of George Boole" class="w-full rounded-xl shadow-lg">
+            </div>
+        </div>
+
+        <!-- Slide 2: Early Life and Education -->
+        <div id="slide-2" class="slide">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Early Life & Education</h2>
+            <div class="content-section">
+                <div class="media-and-text">
+                    <div class="image-container flex-shrink-0">
+                        <img src="https://placehold.co/400x250/e2e8f0/64748b?text=An+old+school+building" alt="A depiction of a historical school building." class="rounded-xl shadow-md">
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Born in Lincoln, England, in 1815, George Boole was the son of a shoemaker. His family had very little money, and he had almost no formal schooling. George was largely self-taught, demonstrating a brilliant mind by learning Latin and Greek on his own. At just 16, he began teaching to support his family, eventually opening his own school.
+                    </p>
+                </div>
+                <div class="link-container">
+                    <a href="https://www.youtube.com/watch?v=FjIuC8L8S18" target="_blank" class="link-button bg-red-600 text-white hover:bg-red-700">Watch: "George Boole: The Father of the Digital Age"</a>
+                    <a href="https://en.wikipedia.org/wiki/George_Boole" target="_blank" class="link-button bg-blue-600 text-white hover:bg-blue-700">Read more on Wikipedia</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Major Contributions -->
+        <div id="slide-3" class="slide">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Major Contributions</h2>
+            <div class="content-section">
+                <div class="media-and-text">
+                    <div class="video-container flex-shrink-0">
+                        <iframe class="rounded-xl shadow-md w-full h-64 sm:h-80" src="https://www.youtube.com/embed/5K72-h1_h8c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Boole's most significant achievement was his creation of Boolean algebra, a revolutionary system for representing logical statements with mathematical symbols. His key idea was to use binary values (1 and 0) to represent "true" and "false."
+                    </p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg shadow-inner">
+                    <p class="font-semibold text-lg text-gray-800 mb-2">Key Works:</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>*The Mathematical Analysis of Logic* (1847)</li>
+                        <li>*An Investigation of the Laws of Thought* (1854)</li>
+                    </ul>
+                </div>
+                <div class="link-container">
+                    <a href="https://www.britannica.com/science/Boolean-algebra" target="_blank" class="link-button bg-purple-600 text-white hover:bg-purple-700">Explore Boolean Algebra</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Influence on Modern AI -->
+        <div id="slide-4" class="slide">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Influence on Modern AI</h2>
+            <div class="content-section">
+                <div class="media-and-text">
+                    <div class="image-container flex-shrink-0">
+                        <img src="https://placehold.co/400x250/e2e8f0/64748b?text=Digital+circuits+and+logic+gates" alt="A conceptual illustration of digital circuits and logic gates." class="rounded-xl shadow-md">
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Boole's work provided the foundation for modern digital computing. His system of true/false logic was later used by Claude Shannon to design electrical circuits with "on" and "off" states. This is the basis for all computer hardware and programming. Boolean logic is fundamental to how computers process information, making it the bedrock of every AI system, from simple search engines to complex machine learning algorithms.
+                    </p>
+                </div>
+                <div class="link-container">
+                    <a href="https://www.youtube.com/watch?v=gW9C_17sB_s" target="_blank" class="link-button bg-red-600 text-white hover:bg-red-700">Video: From Boole to Gates</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button id="prev-btn" class="button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-full opacity-50 cursor-not-allowed" disabled>Previous</button>
+            <button id="next-btn" class="button bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            updateButtons();
+        }
+
+        function updateButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+            prevBtn.classList.toggle('opacity-50', prevBtn.disabled);
+            prevBtn.classList.toggle('cursor-not-allowed', prevBtn.disabled);
+            nextBtn.classList.toggle('opacity-50', nextBtn.disabled);
+            nextBtn.classList.toggle('cursor-not-allowed', nextBtn.disabled);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initial state
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
